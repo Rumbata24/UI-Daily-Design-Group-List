@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+:root {
+  --main-color-text: #b1b9d8;
+  --secondary-color-text: #8795c5;
+  --main-background-color: #1a2036;
+  --secondary-background-color: #252b42;
+  --selection-icon-background-color: #242b42;
+  --selection-background-color: #2e3650;
+  --online-selector-color: #8e66ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+
+  color: var(--main-color-text);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--main-background-color);
+
+  height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+svg {
+  display: block;
+}
+
+.wrapper-container {
+  max-width: 975px;
+  /* height: 662px; */
+  margin: 200px auto;
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  padding: 3rem;
+  background-color: var(--secondary-background-color);
+  gap: 3rem;
+  border-radius: 16px;
+
+  align-items: center;
+}
+
+.left-container {
+  background-color: var(--main-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+
+  height: 100%;
+}
+
+.left-container svg:hover {
+  background-color: var(--selection-icon-background-color);
+  cursor: pointer;
+}
+
+.main-elements {
+  max-width: 752px;
+}
+
+.main-elements .center-main {
+  display: flex;
+}
+
+.middle-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.middle-top .left-box,
+.middle-top .right-box {
+  display: flex;
+    cursor: pointer;
+  align-items: center;
+}
+
+.middle-top .left-box {
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.middle-top .left-box p {
+  gap: 0.5rem;
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+
+.center-main {
+  margin-block: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  align-items: center;
+}
+
+.center-main .boxes {
+  height: 208px;
+  width: 173px;
+  background-color: var(--main-background-color);
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.center-main .boxes:hover {
+  background-color: var(--selection-background-color);
+}
+
+.purple {
+  position: relative;
+}
+
+.purple::before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: 10px;
+  right: 10px;
+  background-color: var(--online-selector-color);
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.center-main .boxes:first-child {
+  background-color: var(--selection-background-color);
+}
+
+.center-main .boxes:first-child:hover {
+  background-color: rgba(46, 54, 80, 0.5);
+}
+
+.center-main .boxes p.name {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-block: 1rem;
+}
+
+.center-main .boxes .members,
+p.create {
+  font-size: 1.4rem;
+}
+
+.center-main .boxes p.create {
+  margin-top: 1rem;
+}
+
+/* @media screen and (max-width: 930px) {
+  .middle-top {
+    max-width: 552px;
+  }
+
+  .main-elements {
+    max-width: 652px;
+  }
+} */
+
+/* For smaller screens */
+@media screen and (max-width: 768px) {
+  .wrapper-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .left-container {
+    margin-bottom: 2rem;
+    flex-direction: row;
+  }
+
+  .main-elements {
+    max-width: none;
+  }
+
+  .center-main .boxes {
+    width: calc(50% - 1rem);
+  }
+}
+
+/* For even smaller screens */
+@media screen and (max-width: 480px) {
+  .center-main .boxes {
+    width: 100%;
+  }
+}
