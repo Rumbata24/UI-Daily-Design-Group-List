@@ -84,7 +84,7 @@ svg {
 .middle-top .left-box,
 .middle-top .right-box {
   display: flex;
-    cursor: pointer;
+  cursor: pointer;
   align-items: center;
 }
 
@@ -122,6 +122,8 @@ svg {
   cursor: pointer;
 
   transition: background-color 0.3s ease-in-out;
+
+  box-shadow: 0 10px 25px -15px #111628;
 }
 
 .center-main .boxes:hover {
